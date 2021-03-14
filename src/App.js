@@ -1,9 +1,23 @@
 import React from 'react';
+import Header from './components/header';
+import RandomPlanet from './components/random-planet';
+import ItemList from './components/item-list/index';
+import PersonDetails from './components/person-details/index';
 
 function App() {
   return (
-    <div className="App">
-    My new star app
+    <div>
+      <Header />
+      <RandomPlanet />
+
+      <div className="row mb2">
+        <div className="col-md-6">
+          <ItemList />
+        </div>
+        <div className="col-md-6">
+          <PersonDetails />
+        </div>
+      </div>
     </div>
   );
 }

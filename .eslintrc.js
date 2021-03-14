@@ -20,7 +20,7 @@ module.exports = {
     "react"
   ],
   "rules": {
-    "indent": ["error", 2, { "ignoredNodes": ["TemplateLiteral"] }],
+    "indent": [2, 2, { "ignoredNodes": ["TemplateLiteral"] }],
     "no-unused-vars": "off",
     "no-undef": "off"
   }
