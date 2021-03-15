@@ -9,6 +9,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:react/recommended"
   ],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -20,7 +21,7 @@ module.exports = {
     "react"
   ],
   "rules": {
-    "indent": [2, 2, { "ignoredNodes": ["TemplateLiteral"] }],
+    "indent": ["off", 2, { "ignoredNodes": ["TemplateLiteral"] }],
     "no-unused-vars": "off",
     "no-undef": "off"
   }
