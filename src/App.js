@@ -8,7 +8,7 @@ import Spiner from './components/spiner/spiner';
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <Header />
       <RandomPlanet />
 
