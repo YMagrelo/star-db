@@ -8,7 +8,7 @@ import Spiner from './components/spiner/spiner';
 
 export default class App extends React.Component {
   state = {
-    selectedPerson: null
+    selectedPerson: 5
   }
 
   onPersonSelected = (id) => {
