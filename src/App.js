@@ -6,22 +6,34 @@ import ItemList from './components/item-list/index';
 import PersonDetails from './components/person-details/index';
 import Spiner from './components/spiner/spiner';
 
-function App() {
-  return (
-    <div className="app">
-      <Header />
-      <RandomPlanet />
+export default class App extends React.Component {
+  state = {
+    selectedPerson: null
+  }
 
-      <div className="row mb2">
-        <div className="col-md-6">
-          <ItemList />
-        </div>
-        <div className="col-md-6">
-          <PersonDetails />
+  onPersonSelected = (id) => {
+    this.setState({
+      selectedPerson: id
+    })
+  }
+
+  render() {
+    console.log(this.state.selectedPerson);
+    return (
+      <div className="app">
+        <Header />
+        <RandomPlanet />
+
+        <div className="row mb2">
+          <div className="col-md-6">
+            <ItemList onPersonSelected={this.onPersonSelected} />
+          </div>
+          <div className="col-md-6">
+            <PersonDetails personId={this.state.selectedPerson} />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
-export default App;
