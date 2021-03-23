@@ -49,7 +49,6 @@ export default class PersonDetails extends Component {
 
   render() {
     const { person, error, loading } = this.state;
-    console.log(person);
     if (error) {
       return <ErrorIndicator />
     }

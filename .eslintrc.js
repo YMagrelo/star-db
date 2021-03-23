@@ -21,7 +21,7 @@ module.exports = {
     "react"
   ],
   "rules": {
-    "indent": [2, 2, { "ignoredNodes": ["TemplateLiteral"] }],
+    "indent": [1, 2, { "ignoredNodes": ["TemplateLiteral"] }],
     "no-unused-vars": "off",
     "no-undef": "off",
     "react/prop-types": 0
