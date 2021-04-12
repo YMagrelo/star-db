@@ -5,6 +5,19 @@ import PersonDetails from '../person-details';
 import './people-page.css';
 import SwapiService from '../../services/swapi-service';
 
+const Row = ({ left, right}) => {
+  return (
+    <div className="row mb2">
+      <div className="col-md-6">
+        {left}
+      </div>
+      <div className="col-md-6">
+        {right}
+      </div>
+    </div>
+  )
+}
+
 export default class PeoplePage extends React.Component {
   swapiService = new SwapiService();
     state = {
@@ -34,15 +47,13 @@ export default class PeoplePage extends React.Component {
           renderItem={({ name, gender, birthYear }) => `${name} (${gender} ${birthYear})`}
         />
       )
+
+      const personDetails = (
+        <PersonDetails personId={this.state.selectedPerson} />
+      )
+      
       return (
-        <div className="row mb2">
-          <div className="col-md-6">
-            {itemList}
-          </div>
-          <div className="col-md-6">
-            <PersonDetails personId={this.state.selectedPerson} />
-          </div>
-        </div>
+        <Row left={itemList} right={personDetails} />
       )
     }
 }
