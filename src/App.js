@@ -44,7 +44,7 @@ export default class App extends React.Component {
           <div className="col-md-6">
             <PersonDetails />
           </div>
-        </div>
+        </div> 
 
       </div>
     );
