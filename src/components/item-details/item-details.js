@@ -41,7 +41,7 @@ export default class ItemDetails extends Component {
         this.setState({ 
           item, 
           loading: false,
-          image: getImageUrl
+          image: getImageUrl(itemId)
         })
       })
   }

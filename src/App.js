@@ -13,13 +13,13 @@ export default class App extends React.Component {
 
   render() {
 
-    const { getPerson, getStarship } = this.swapiService;
+    const { getPerson, getStarship, getPersonImage, getStarshipImage } = this.swapiService;
 
     const personDetails = (
       <ItemDetails 
         itemId={11} 
         getData={getPerson} 
-        getImageUrl={}
+        getImageUrl={getPersonImage}
       />
     );
 
@@ -27,7 +27,7 @@ export default class App extends React.Component {
       <ItemDetails 
         itemId={5} 
         getData={getStarship} 
-        getImageUrl={}
+        getImageUrl={getStarshipImage}
       />
     );
     
