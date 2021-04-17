@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/header';
 import RandomPlanet from './components/random-planet';
 import ItemList from './components/item-list/index';
-import PersonDetails from './components/person-details/index';
+import ItemDetails from './components/item-details/index';
 import PeoplePage from './components/people-page/people-page';
 import SwapiService from './services/swapi-service';
 
@@ -20,7 +20,7 @@ export default class App extends React.Component {
         <PeoplePage />
        
 
-        <div className="row mb2">
+        {/* <div className="row mb2">
           <div className="col-md-6">
             <ItemList 
               onItemSelected={this.onPersonSelected} 
@@ -31,9 +31,9 @@ export default class App extends React.Component {
           <div className="col-md-6">
             <PersonDetails />
           </div>
-        </div>
+        </div> */}
 
-        <div className="row mb2">
+        {/* <div className="row mb2">
           <div className="col-md-6">
             <ItemList 
               onItemSelected={this.onPersonSelected} 
@@ -44,7 +44,7 @@ export default class App extends React.Component {
           <div className="col-md-6">
             <PersonDetails />
           </div>
-        </div> 
+        </div>  */}
 
       </div>
     );

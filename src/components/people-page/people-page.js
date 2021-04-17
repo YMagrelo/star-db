@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ErrorIndicator from '../error-indicator/error-indicator';
 import ItemList from '../item-list';
-import PersonDetails from '../person-details';
+import ItemDetails from '../item-details';
 import './people-page.css';
 import SwapiService from '../../services/swapi-service';
 import Row from '../row/row';
@@ -30,7 +30,7 @@ export default class PeoplePage extends React.Component {
       )
 
       const personDetails = (
-        <PersonDetails personId={this.state.selectedPerson} />
+        <ItemDetails personId={this.state.selectedPerson} />
       )
 
       return (

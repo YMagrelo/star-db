@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import PlanetView from '../random-planet/planet-view';
 
-import './person-details.css';
+import './item-details.css';
 
 const PersonView = ({ person }) => {
 

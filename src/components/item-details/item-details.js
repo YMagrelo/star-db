@@ -3,40 +3,39 @@ import SwapiService from '../../services/swapi-service';
 import ErrorIndicator from '../error-indicator/error-indicator';
 import Spiner from '../spiner/spiner';
 import PersonView from './person-view';
+import './item-details.css';
 
-import './person-details.css';
-
-export default class PersonDetails extends Component {
+export default class ItemDetails extends Component {
   swapiService = new SwapiService();
 
   state = {
-    person: null,
+    item: null,
     loading: true,
     error: false
   }
 
   componentDidMount() {
-    this.updatePerson()
+    this.updateItem()
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.personId !== prevProps.personId) {
       
-      this.updatePerson();
+      this.updateItem();
     }
   }
 
-  updatePerson() {
-    const { personId } = this.props;
-    if (!personId) {
+  updateItem() {
+    const { itemId } = this.props;
+    if (!itemId) {
       return
     }
     
     this.setState({loading: true});
 
-    this.swapiService.getPerson(personId)
-      .then((person) => {
-        this.setState({ person, loading: false })
+    this.swapiService.getPerson(itemId)
+      .then((item) => {
+        this.setState({ item, loading: false })
       })
   }
 
@@ -48,18 +47,18 @@ export default class PersonDetails extends Component {
   };
 
   render() {
-    const { person, error, loading } = this.state;
+    const { item, error, loading } = this.state;
     if (error) {
       return <ErrorIndicator />
     }
 
-    if (!person) {
+    if (!item) {
       return null;
     }
 
     return (
       <div className="person-details card">
-        {loading ? <Spiner /> : <PersonView person={person} />}
+        {loading ? <Spiner /> : <PersonView person={item} />}
       </div>
     )
   }
