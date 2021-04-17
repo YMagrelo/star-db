@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SwapiService from '../../services/swapi-service';
 import ErrorIndicator from '../error-indicator/error-indicator';
 import Spiner from '../spiner/spiner';
-import PersonView from './person-view';
+import ItemView from './person-view';
 import './item-details.css';
 
 export default class ItemDetails extends Component {
@@ -11,31 +11,38 @@ export default class ItemDetails extends Component {
   state = {
     item: null,
     loading: true,
-    error: false
+    error: false,
+    image: null
   }
 
   componentDidMount() {
-    this.updateItem()
+    if(this.props.getData) {
+      this.updateItem()
+    }
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.personId !== prevProps.personId) {
+    if (this.props.itemId !== prevProps.itemId) {
       
       this.updateItem();
     }
   }
 
   updateItem() {
-    const { itemId } = this.props;
+    const { itemId, getData, getImageUrl } = this.props;
     if (!itemId) {
       return
     }
-    
+   
     this.setState({loading: true});
 
-    this.swapiService.getPerson(itemId)
+    getData(itemId)
       .then((item) => {
-        this.setState({ item, loading: false })
+        this.setState({ 
+          item, 
+          loading: false,
+          image: getImageUrl
+        })
       })
   }
 
@@ -47,7 +54,7 @@ export default class ItemDetails extends Component {
   };
 
   render() {
-    const { item, error, loading } = this.state;
+    const { item, error, loading, image } = this.state;
     if (error) {
       return <ErrorIndicator />
     }
@@ -58,7 +65,7 @@ export default class ItemDetails extends Component {
 
     return (
       <div className="person-details card">
-        {loading ? <Spiner /> : <PersonView person={item} />}
+        {loading ? <Spiner /> : <ItemView item={item} image={image}/>}
       </div>
     )
   }

@@ -30,7 +30,7 @@ export default class PeoplePage extends React.Component {
       )
 
       const personDetails = (
-        <ItemDetails personId={this.state.selectedPerson} />
+        <ItemDetails itemId={this.state.selectedPerson} />
       )
 
       return (
