@@ -11,7 +11,10 @@ const ItemView = ({ item, image, children }) => {
       <div className="card-body">
         <h4>{item.name}</h4>
         <ul className="list-group list-group-flush">
-          {children }
+          
+          {React.Children.map(children, (child, i) => {
+            return React.cloneElement(child, { item });
+          })}
         </ul>
       </div>
     </>
