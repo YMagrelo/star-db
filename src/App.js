@@ -7,6 +7,7 @@ import ItemDetails from './components/item-details/index';
 import PeoplePage from './components/people-page/people-page';
 import SwapiService from './services/swapi-service';
 import Row from './components/row/row';
+import Record from './components/record/Record';
 
 export default class App extends React.Component {
   swapiService = new SwapiService();
@@ -19,8 +20,10 @@ export default class App extends React.Component {
       <ItemDetails 
         itemId={11} 
         getData={getPerson} 
-        getImageUrl={getPersonImage}
-      />
+        getImageUrl={getPersonImage}>
+        <Record field="gender" label="Gender" />
+        <Record field="eyeColor" label="Eye Color" />
+      </ItemDetails>
     );
 
     const starshipDetails = (

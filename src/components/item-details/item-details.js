@@ -30,6 +30,7 @@ export default class ItemDetails extends Component {
 
   updateItem() {
     const { itemId, getData, getImageUrl } = this.props;
+   
     if (!itemId) {
       return
     }
@@ -65,7 +66,9 @@ export default class ItemDetails extends Component {
 
     return (
       <div className="person-details card">
-        {loading ? <Spiner /> : <ItemView item={item} image={image}/>}
+        {loading ? <Spiner /> : <ItemView item={item} image={image}>
+          {this.props.children}
+        </ItemView>}
       </div>
     )
   }
