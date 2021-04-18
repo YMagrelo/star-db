@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import './item-details.css';
 
 const ItemView = ({ item, image, children }) => {
-console.log('child view', children);
   return (
     <>
       <img className="person-image"

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SwapiService from '../../services/swapi-service';
 import ErrorIndicator from '../error-indicator/error-indicator';
 import Spiner from '../spiner/spiner';
-import ItemView from './person-view';
+import ItemView from './item-view';
 import './item-details.css';
 
 export default class ItemDetails extends Component {
