@@ -47,7 +47,7 @@ export default class App extends React.Component {
         <Row left={personDetails} right={starshipDetails} />
        
 
-        {/* <div className="row mb2">
+        <div className="row mb2">
           <div className="col-md-6">
             <ItemList 
               onItemSelected={this.onPersonSelected} 
@@ -56,9 +56,9 @@ export default class App extends React.Component {
             />
           </div>
           <div className="col-md-6">
-            <PersonDetails />
+            <ItemDetails />
           </div>
-        </div> */}
+        </div> 
 
         {/* <div className="row mb2">
           <div className="col-md-6">

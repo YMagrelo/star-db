@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Spiner from '../spiner/spiner';
 
 const withData = (View, getData) => {
   return class Hoc extends Component {
    
-  
     state = {
       data: null
     }

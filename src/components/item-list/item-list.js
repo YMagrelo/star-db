@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-import React, { Component } from 'react';
+import React from 'react';
 import SwapiService from '../../services/swapi-service';
 import withData from '../hoc-helpers/with-data';
 
