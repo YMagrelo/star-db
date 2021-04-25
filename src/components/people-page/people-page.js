@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import ErrorIndicator from '../error-indicator/error-indicator';
-import ItemList from '../item-list';
+import React from 'react';
 import ItemDetails from '../item-details';
 import './people-page.css';
 import SwapiService from '../../services/swapi-service';
 import Row from '../row/row';
 import ErrorBoundry from '../error-boundry/error-boundry';
 import Record from '../record/Record';
+import { PersonList } from '../sw-components/item-lists';
 
 export default class PeoplePage extends React.Component {
   swapiService = new SwapiService();
@@ -25,9 +24,8 @@ export default class PeoplePage extends React.Component {
       const { getPerson, getPersonImage } = this.swapiService;
 
       const itemList = (
-        <ItemList 
+        <PersonList
           onItemSelected={this.onPersonSelected} 
-          getData={this.swapiService.getAllPeople} 
           renderItem={(i) => `${i.name} (${i.birthYear})`}
         />
       )

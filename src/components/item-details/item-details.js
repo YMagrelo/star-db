@@ -47,7 +47,7 @@ export default class ItemDetails extends Component {
       })
   }
 
-  onError = (error) => {
+  onError = () => {
     this.setState({
       error: true,
       loading: false

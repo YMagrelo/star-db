@@ -8,6 +8,8 @@ import PeoplePage from './components/people-page/people-page';
 import SwapiService from './services/swapi-service';
 import Row from './components/row/row';
 import Record from './components/record/Record';
+import { PlanetList } from './components/sw-components/item-lists';
+import { PersonDetails, PlanetDetails, StarshipDetails } from './components/sw-components/details';
 
 export default class App extends React.Component {
   swapiService = new SwapiService();
@@ -44,14 +46,17 @@ export default class App extends React.Component {
 
         <PeoplePage />
 
-        <Row left={personDetails} right={starshipDetails} />
+        <PersonDetails itemId={11} />
+
+        <PlanetDetails itemId={2} />
+
+        <StarshipDetails itemId={5} />
        
 
         <div className="row mb2">
           <div className="col-md-6">
-            <ItemList 
+            <PlanetList 
               onItemSelected={this.onPersonSelected} 
-              getData={this.swapiService.getAllPlanets}
               renderItem={(item) => (<span>{item.name}</span>)}
             />
           </div>
@@ -59,19 +64,6 @@ export default class App extends React.Component {
             <ItemDetails />
           </div>
         </div> 
-
-        {/* <div className="row mb2">
-          <div className="col-md-6">
-            <ItemList 
-              onItemSelected={this.onPersonSelected} 
-              getData={this.swapiService.getAllStarships}
-              renderItem={(item) => item.name}
-            />
-          </div>
-          <div className="col-md-6">
-            <PersonDetails />
-          </div>
-        </div>  */}
 
       </div>
     );
