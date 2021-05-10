@@ -2,14 +2,13 @@ import React from 'react';
 import './App.css';
 import Header from './components/header';
 import RandomPlanet from './components/random-planet';
-import ItemList from './components/item-list/index';
 import ItemDetails from './components/item-details/index';
 import PeoplePage from './components/people-page/people-page';
 import SwapiService from './services/swapi-service';
-import Row from './components/row/row';
 import Record from './components/record/Record';
 import { PlanetList } from './components/sw-components/item-lists';
 import { PersonDetails, PlanetDetails, StarshipDetails } from './components/sw-components/details';
+import { SwapiServiceProvider } from './components/swapi-service-context/swapi-service-context';
 
 export default class App extends React.Component {
   swapiService = new SwapiService();
@@ -40,32 +39,34 @@ export default class App extends React.Component {
     );
     
     return (
-      <div className="app">
-        <Header />
-        <RandomPlanet />
+      <SwapiServiceProvider value={this.swapiService}>
+        <div className="app">
+          <Header />
+          <RandomPlanet />
 
-        <PeoplePage />
+          <PeoplePage />
 
-        <PersonDetails itemId={11} />
+          <PersonDetails itemId={11} />
 
-        <PlanetDetails itemId={2} />
+          <PlanetDetails itemId={2} />
 
-        <StarshipDetails itemId={5} />
+          <StarshipDetails itemId={5} />
        
 
-        <div className="row mb2">
-          <div className="col-md-6">
-            <PlanetList 
-              onItemSelected={this.onPersonSelected} 
-              renderItem={(item) => (<span>{item.name}</span>)}
-            />
-          </div>
-          <div className="col-md-6">
-            <ItemDetails />
-          </div>
-        </div> 
+          <div className="row mb2">
+            <div className="col-md-6">
+              <PlanetList 
+                onItemSelected={this.onPersonSelected} 
+                renderItem={(item) => (<span>{item.name}</span>)}
+              />
+            </div>
+            <div className="col-md-6">
+              <ItemDetails />
+            </div>
+          </div> 
 
-      </div>
+        </div>
+      </SwapiServiceProvider>
     );
   }
 }
