@@ -7,9 +7,9 @@ import PeoplePage from './components/people-page/people-page';
 import SwapiService from './services/swapi-service';
 import Record from './components/record/Record';
 import { PlanetList } from './components/sw-components/item-lists';
-import { PersonDetails } from './components/sw-components/person-details';
-import { PlanetDetails } from './components/sw-components/planet-details';
-import { StarshipDetails } from './components/sw-components/starship-details';
+import PersonDetails  from './components/sw-components/person-details';
+import PlanetDetails from './components/sw-components/planet-details';
+import StarshipDetails from './components/sw-components/starship-details';
 import { SwapiServiceProvider } from './components/swapi-service-context/swapi-service-context';
 
 export default class App extends React.Component {
