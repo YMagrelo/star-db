@@ -2,13 +2,12 @@ import React from 'react';
 
 import './item-list.css';
 
-const ItemList = ({ data, onItemSelected, renderItem }) => {
+const ItemList = ({ data, onItemSelected }) => {
 
   return (
-    <ul className="item-list list-group">
+    <ul className="item-list list-group test">
       {data.map((item) => {
         const { id } = item;
-        const label = renderItem(item);
 
         return (
           <li
@@ -16,7 +15,7 @@ const ItemList = ({ data, onItemSelected, renderItem }) => {
             key={id}
             onClick={() => onItemSelected(id)}
           >
-            {label}
+            {item.name}
           </li>
         )
       })}
