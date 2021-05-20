@@ -37,11 +37,11 @@ const mapStarshipMethodsToProps = (swapiService) => {
   }
 }
 
-const PersonList = withSwapiService(withData(ListWithChildren), mapPersonMethodsToProps);
+const PersonList = withSwapiService(mapPersonMethodsToProps)(withData(ListWithChildren));
 
-const PlanetList = withSwapiService(withData(ListWithChildren), mapPlanetMethodsToProps);
+const PlanetList = withSwapiService(mapPlanetMethodsToProps)(withData(ListWithChildren));
 
-const StarshipList = withSwapiService(withData(ListWithChildren), mapStarshipMethodsToProps);
+const StarshipList = withSwapiService(mapStarshipMethodsToProps)(withData(ListWithChildren));
 
 export {
   PersonList,
