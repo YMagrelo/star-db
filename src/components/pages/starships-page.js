@@ -2,27 +2,18 @@ import React from "react";
 import Row from "../row/row";
 import ErrorBoundry from "../error-boundry/error-boundry";
 import { StarshipList } from "../sw-components/item-lists";
-import StarshipDetails from "../sw-components/starship-details";
+import { withRouter } from 'react-router-dom';
 
-export default class StarshipsPage extends React.Component {
-  state = {
-    selectedItem: null,
-  };
+const StarshipsPage = ({ history }) => {
+  return (
+    <ErrorBoundry>
+      <Row 
+      left={<StarshipList onItemSelected={(itemId) => {
+        history.push(`starships/${itemId}`);
+      }} />} 
+      />
+    </ErrorBoundry>
+  );
+};
 
-  onItemSelected = (selectedItem) => {
-    this.setState({ selectedItem });
-  };
-
-  render() {
-    const { selectedItem } = this.state;
-
-    return (
-      <ErrorBoundry>
-        <Row
-          left={<StarshipList onItemSelected={this.onItemSelected} />}
-          right={<StarshipDetails itemId={selectedItem} />}
-        />
-      </ErrorBoundry>
-    );
-  }
-}
+export default withRouter(StarshipsPage);
