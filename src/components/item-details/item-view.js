@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './item-details.css';
 
@@ -6,7 +6,7 @@ const ItemView = ({ item, image, children }) => {
   return (
     <>
       <img className="person-image"
-        src={image} />
+        src={image} alt="starwar person"/>
 
       <div className="card-body">
         <h4>{item.name}</h4>

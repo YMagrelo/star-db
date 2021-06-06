@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-import React, { Component } from 'react';
+import React from 'react';
 import './random-planet.css';
 
 
@@ -14,7 +13,7 @@ const PlanetView = ({ planet }) => {
   return (
     <>
       <img className="planet-image"
-        src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} />
+        src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} alt="starwar planet" />
       <div>
         <h4>{name}</h4>
         <ul className="list-group list-group-flush">
